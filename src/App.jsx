@@ -17,7 +17,8 @@
 // import Controlledcomponents from "./lessons/16-controlledcomponents"
 // import Checkboxes from "./lessons/17-checkbox"
 // import Button from "./lessons/18-radioandddropbutton"
-import Looparray from "./lessons/19-Loop-in-jsx-map"
+// import Looparray from "./lessons/19-Loop-in-jsx-map"
+import ReuseComponent from "./lessons/20-reuse-component-in-loop"
 
 
 function App() {
@@ -85,7 +86,9 @@ function App() {
      {/* <Controlledcomponents /> */}
      {/* <Checkboxes /> */}
      {/* <Button /> */}
-     <Looparray />
+     {/* <Looparray /> */}
+
+     <ReuseComponent />
 
 
 
