@@ -18,7 +18,9 @@
 // import Checkboxes from "./lessons/17-checkbox"
 // import Button from "./lessons/18-radioandddropbutton"
 // import Looparray from "./lessons/19-Loop-in-jsx-map"
+import { useState } from "react";
 import ReuseComponent from "./lessons/20-reuse-component-in-loop"
+import Clock from "./lessons/21-clock";
 
 
 function App() {
@@ -45,6 +47,7 @@ function App() {
 
   // let collegeNames = ["IIT", 'IET', 'NAST','NIT', 'MIT']
   // const [student, setStudent] = useState("sam")
+  const [color, setColor]=useState('green')
 
   return (
     <div>
@@ -88,7 +91,21 @@ function App() {
      {/* <Button /> */}
      {/* <Looparray /> */}
 
-     <ReuseComponent />
+     {/* <ReuseComponent /> */}
+
+     <div>
+      <h1>
+        Digiral Clock in react js
+      </h1>
+      <select onChange={(event)=>setColor(event.target.value)}>
+        <option value={'red'}>Red</option>
+        <option value={'blue'}>Blue</option>
+        <option value={'green'}>Green</option>
+        <option value={'orange'}>Orange</option>
+      </select>
+     </div>
+
+     <Clock  color={color}/>
 
 
 
