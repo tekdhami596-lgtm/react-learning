@@ -21,7 +21,10 @@
 // import { useState } from "react";
 // import ReuseComponent from "./lessons/20-reuse-component-in-loop"
 // import Clock from "./lessons/21-clock";
-import CallOnce from "./lessons/22-useEffectHook"
+// import CallOnce from "./lessons/22-useEffectHook"
+// import { useState } from "react";
+// import Counter from "./lessons/23-props-useEffect"
+import UseRefHook from "./lessons/24-useRefHook"
 
 function App() {
   //  let userName="Tek Dhami";
@@ -46,8 +49,14 @@ function App() {
   // }
 
   // let collegeNames = ["IIT", 'IET', 'NAST','NIT', 'MIT']
+
+
+  
   // const [student, setStudent] = useState("sam")
   // const [color, setColor]=useState('green')
+  // const [count, setCount]=useState(0)
+  // const [data, setData]=useState(0);
+  // const [display, setDisplay]=useState(true)
 
   return (
     <div>
@@ -107,7 +116,20 @@ function App() {
 
      <Clock  color={color}/> */}
 
-     <CallOnce />
+     {/* <CallOnce /> */}
+{/* 
+      <h1>Handle props side effect with useEffect in component</h1>
+
+      {
+        display? <Counter count={count} data={data} />:null
+      }
+    
+     <button onClick={()=>setCount(count+1)}>Counter</button>
+     <button onClick={()=>setData(data+1)}>Data</button>
+     
+     <button onClick={()=>setDisplay(!display)}>Toggle</button> */}
+
+     <UseRefHook />
 
 
 

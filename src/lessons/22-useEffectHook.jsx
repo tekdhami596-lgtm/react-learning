@@ -11,9 +11,9 @@ useEffect(()=>{
 
 
 
-function counterFunction(){
-  console.log("Counter Function",counter)
-}
+// function counterFunction(){
+//   console.log("Counter Function",counter)
+// }
 
 
 function Once(){
