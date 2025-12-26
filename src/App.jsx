@@ -199,14 +199,19 @@ function App() {
         <CustomForm />
       </form> */}
 
-      <h1>Use transition Hook in React Js in 19</h1>
+     {/*  <h1>Use transition Hook in React Js in 19</h1>
       {
         pending?<img style={{width:'100px'}} src="https://media.tenor.com/UnFx-k_lSckAAAAM/amalie-steiness.gif" />:null
       }
 
       <button disabled={pending} onClick={handleButton}>
         Click
-      </button>
+      </button> */}
+
+
+
+      <h1>Derived state</h1>
+      
     </div>
   );
 }
