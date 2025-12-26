@@ -6,7 +6,7 @@ function CallOnce(){
 
 useEffect(()=>{
 // Once();
-counterFunction();
+// counterFunction();
 },[counter])
 
 
