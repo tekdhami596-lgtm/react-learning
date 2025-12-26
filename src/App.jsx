@@ -13,6 +13,8 @@
 // import Defaultprops from "./lessons/13-defaultprops"
 // import Wrapper from "./lessons/14-wrapperprops";
 
+import User from "./lessons/26-pass-function-in-component-as-props";
+
 // import Getinputfieldvalue from "./lessons/15-inputfield";
 // import Controlledcomponents from "./lessons/16-controlledcomponents"
 // import Checkboxes from "./lessons/17-checkbox"
@@ -24,7 +26,8 @@
 // import CallOnce from "./lessons/22-useEffectHook"
 // import { useState } from "react";
 // import Counter from "./lessons/23-props-useEffect"
-import UseRefHook from "./lessons/24-useRefHook"
+// import UseRefHook from "./lessons/24-useRefHook"
+// import Form from "./lessons/25-uncontrolledComponent"
 
 function App() {
   //  let userName="Tek Dhami";
@@ -57,6 +60,14 @@ function App() {
   // const [count, setCount]=useState(0)
   // const [data, setData]=useState(0);
   // const [display, setDisplay]=useState(true)
+
+   const displayName=(name)=>{
+    alert(name)
+  }
+
+  const getUser=()=>{
+    alert("Get user name")
+  }
 
   return (
     <div>
@@ -129,7 +140,16 @@ function App() {
      
      <button onClick={()=>setDisplay(!display)}>Toggle</button> */}
 
-     <UseRefHook />
+     {/* <UseRefHook /> */}
+
+     {/* <Form /> */}
+
+  <h1>Call parent component funtion from child  component</h1>
+     <User displayName={displayName} name="Tek" getUser={getUser}/>
+     <User displayName={displayName} name="ram" getUser={getUser}/>
+     <User displayName={displayName} name="hari" getUser={getUser}/>
+     <User displayName={displayName} name="sita" getUser={getUser}/>
+    
 
 
 
