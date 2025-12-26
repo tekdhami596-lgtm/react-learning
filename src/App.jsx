@@ -14,6 +14,7 @@
 // import Wrapper from "./lessons/14-wrapperprops";
 
 // import { useRef } from "react";
+import { useState, useTransition } from "react";
 import { useFormStatus } from "react-dom";
 
 // import User from "./lessons/26-pass-function-in-component-as-props";
@@ -79,7 +80,7 @@ function App() {
     }
  */
 
-  const handleSubmit = async () => {
+  /*  const handleSubmit = async () => {
     await new Promise((res) => setTimeout(res, 4000));
     console.log("submit");
   };
@@ -97,7 +98,15 @@ function App() {
         <button disabled={pending}>{pending?"submitting...":'Submit'}</button>
       </div>
     );
-  }
+  } */
+
+  const [pending, startTransition] = useTransition();
+
+  const handleButton = () => {
+    startTransition(async () => {
+      await new Promise((res) => setTimeout(res, 3000));
+    });
+  };
 
   return (
     <div>
@@ -184,11 +193,20 @@ function App() {
    <UserInput  ref={inputRef}/>
     <button onClick={updateInput}>Update input field</button>
  */}
-
+      {/* 
       <h1>UseFormStatus Hook in React Js 19</h1>
       <form action={handleSubmit}>
         <CustomForm />
-      </form>
+      </form> */}
+
+      <h1>Use transition Hook in React Js in 19</h1>
+      {
+        pending?<img style={{width:'100px'}} src="https://media.tenor.com/UnFx-k_lSckAAAAM/amalie-steiness.gif" />:null
+      }
+
+      <button disabled={pending} onClick={handleButton}>
+        Click
+      </button>
     </div>
   );
 }
