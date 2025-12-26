@@ -14,8 +14,11 @@
 // import Wrapper from "./lessons/14-wrapperprops";
 
 // import { useRef } from "react";
-import { useState, useTransition } from "react";
-import { useFormStatus } from "react-dom";
+// import { useState, useTransition } from "react";
+// import { useFormStatus } from "react-dom";
+import { useState } from "react";
+import { SubjectContext } from "./lessons/28-contextAPI";
+import College from "./lessons/29-collegeContextAPI";
 
 // import User from "./lessons/26-pass-function-in-component-as-props";
 
@@ -100,13 +103,15 @@ function App() {
     );
   } */
 
-  const [pending, startTransition] = useTransition();
+  /* const [pending, startTransition] = useTransition();
 
   const handleButton = () => {
     startTransition(async () => {
       await new Promise((res) => setTimeout(res, 3000));
     });
-  };
+  }; */
+
+  const [subject, setSubject]=useState('')
 
   return (
     <div>
@@ -199,7 +204,7 @@ function App() {
         <CustomForm />
       </form> */}
 
-     {/*  <h1>Use transition Hook in React Js in 19</h1>
+      {/*  <h1>Use transition Hook in React Js in 19</h1>
       {
         pending?<img style={{width:'100px'}} src="https://media.tenor.com/UnFx-k_lSckAAAAM/amalie-steiness.gif" />:null
       }
@@ -208,10 +213,22 @@ function App() {
         Click
       </button> */}
 
+      {/* <h1>Derived state</h1> */}
 
-
-      <h1>Derived state</h1>
-      
+      <div style={{ backgroundColor: "yellow", padding: "10px" }}>
+        <SubjectContext.Provider value={subject}>
+          <select value={subject} onChange={(event)=>setSubject(event.target.value)} >
+           <option value="">Select Subject</option>
+            <option value="Maths">Maths</option>
+            <option value="English">English</option>
+            <option value="Science">Science</option>
+            <option value="Computer">Computer</option>
+          </select>
+          <h1>Context API</h1>
+          <button onClick={()=>setSubject('')}>Clear</button>
+          <College />
+        </SubjectContext.Provider>
+      </div>
     </div>
   );
 }
