@@ -13,7 +13,8 @@
 // import Defaultprops from "./lessons/13-defaultprops"
 // import Wrapper from "./lessons/14-wrapperprops";
 
-import { useRef } from "react";
+// import { useRef } from "react";
+import { useFormStatus } from "react-dom";
 
 // import User from "./lessons/26-pass-function-in-component-as-props";
 
@@ -30,7 +31,7 @@ import { useRef } from "react";
 // import Counter from "./lessons/23-props-useEffect"
 // import UseRefHook from "./lessons/24-useRefHook"
 // import Form from "./lessons/25-uncontrolledComponent"
-import UserInput from "./lessons/27-forwardRef";
+// import UserInput from "./lessons/27-forwardRef";
 
 function App() {
   //  let userName="Tek Dhami";
@@ -56,8 +57,6 @@ function App() {
 
   // let collegeNames = ["IIT", 'IET', 'NAST','NIT', 'MIT']
 
-
-  
   // const [student, setStudent] = useState("sam")
   // const [color, setColor]=useState('green')
   // const [count, setCount]=useState(0)
@@ -72,12 +71,33 @@ function App() {
     alert("Get user name")
   } */
 
-    const inputRef = useRef(null)
+  /*   const inputRef = useRef(null)
 
     const updateInput=()=>{
       inputRef.current.value='1000'
       inputRef.current.focus()
     }
+ */
+
+  const handleSubmit = async () => {
+    await new Promise((res) => setTimeout(res, 4000));
+    console.log("submit");
+  };
+
+  function CustomForm() {
+    const {pending}=useFormStatus()
+    return (
+      <div>
+        <input type="text" placeholder="Enter name" />
+        <br />
+        <br />
+        <input type="text" placeholder="Password" />
+        <br />
+        <br />
+        <button disabled={pending}>{pending?"submitting...":'Submit'}</button>
+      </div>
+    );
+  }
 
   return (
     <div>
@@ -93,7 +113,7 @@ function App() {
       {/* <Counter /> */}
       {/* <Toggle /> */}
       {/* <MultipleConditions /> */}
-     
+
       {/* <User name={userName} age={age} email={email} /> */}
       {/* { student && <Student name = {student} />}
       <button onClick={()=>setStudent("Bhaskar")}>Update student name</button> */}
@@ -102,11 +122,10 @@ function App() {
       <User user={userObject2} />
       <User user={userObject3} /> */}
 
-
-    {/* <Defaultprops name ="tek dhami" />
+      {/* <Defaultprops name ="tek dhami" />
     <Defaultprops  />
     <Defaultprops name ="tek dhami" /> */}
-     {/* <Wrapper color="orange">
+      {/* <Wrapper color="orange">
        <h1>Hello everyone</h1>
      </Wrapper>
      <Wrapper>
@@ -114,16 +133,16 @@ function App() {
        <p style={{color:"red"}}>Hello admin</p>
      </Wrapper> */}
 
-     {/* <Getinputfieldvalue /> */}
+      {/* <Getinputfieldvalue /> */}
 
-     {/* <Controlledcomponents /> */}
-     {/* <Checkboxes /> */}
-     {/* <Button /> */}
-     {/* <Looparray /> */}
+      {/* <Controlledcomponents /> */}
+      {/* <Checkboxes /> */}
+      {/* <Button /> */}
+      {/* <Looparray /> */}
 
-     {/* <ReuseComponent /> */}
+      {/* <ReuseComponent /> */}
 
-    {/*  <div>
+      {/*  <div>
       <h1>
         Digiral Clock in react js
       </h1>
@@ -137,8 +156,8 @@ function App() {
 
      <Clock  color={color}/> */}
 
-     {/* <CallOnce /> */}
-{/* 
+      {/* <CallOnce /> */}
+      {/* 
       <h1>Handle props side effect with useEffect in component</h1>
 
       {
@@ -150,26 +169,28 @@ function App() {
      
      <button onClick={()=>setDisplay(!display)}>Toggle</button> */}
 
-     {/* <UseRefHook /> */}
+      {/* <UseRefHook /> */}
 
-     {/* <Form /> */}
+      {/* <Form /> */}
 
-{/*   <h1>Call parent component funtion from child  component</h1>
+      {/*   <h1>Call parent component funtion from child  component</h1>
      <User displayName={displayName} name="Tek" getUser={getUser}/>
      <User displayName={displayName} name="ram" getUser={getUser}/>
      <User displayName={displayName} name="hari" getUser={getUser}/>
      <User displayName={displayName} name="sita" getUser={getUser}/>
      */}
 
-
-
-    <h1>Forward Ref</h1>
+      {/*   <h1>Forward Ref</h1>
    <UserInput  ref={inputRef}/>
     <button onClick={updateInput}>Update input field</button>
+ */}
 
-
+      <h1>UseFormStatus Hook in React Js 19</h1>
+      <form action={handleSubmit}>
+        <CustomForm />
+      </form>
     </div>
-  )
+  );
 }
 
 export default App;
